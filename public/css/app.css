@@ -59,3 +59,9 @@ tr:nth-child(even) {
 m-20{
     margin: 20px;
 }
+td{
+    border-radius: 10px;
+}
+.button.delete{
+    margin-top: 5px;
+}

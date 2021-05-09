@@ -27,10 +27,14 @@
     <table class="p-20 w-full m-20">
         <caption class="caption">Lista posts</caption>
         @foreach($posts as $post)
-            <tr>
-                <td class="p-20">
+            <tr id="post">
+                <td class="p-20" >
                     <div class="tit">{{$post->title}}</div>
                     <div class="desc">{{$post->description}}</div>
+                    <button class="button delete" onclick="remove()">Elimina</button>
+                </td>
+                <td>
+
                 </td>
 
             </tr>
@@ -38,4 +42,12 @@
     </table>
 </div>
 </body>
+<script>
+    function remove(){
+
+        let post=document.getElementById('post');
+        post.remove();
+    }
+
+</script>
 </html>
