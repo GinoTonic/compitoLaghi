@@ -23,31 +23,28 @@
         <input class="button" type="submit" value="Submit">
     </form>
 </div>
-<div>
-    <table class="p-20 w-full m-20">
-        <caption class="caption">Lista posts</caption>
+    <h1>Lista dei post</h1>
+<hr>
+    <div>
         @foreach($posts as $post)
-            <tr id="post">
-                <td class="p-20" >
-                    <div class="tit">{{$post->title}}</div>
-                    <div class="desc">{{$post->description}}</div>
+            <div id="post" class="post">
+                <h2>{{$post->title}}</h2>
+                <p>{{$post->description}}</p>
+                <form method="POST" action="{{route('posts.destroy'), ['post'=>$post]}}">
+                    {{method_field(DELETE)}}
                     <button class="button delete" onclick="remove()">Elimina</button>
-                </td>
-                <td>
-
-                </td>
-
-            </tr>
+                </form>
+            </div>
         @endforeach
-    </table>
+    </div>
 </div>
 </body>
-<script>
-    function remove(){
+{{--<script>--}}
+{{--    function remove(){--}}
 
-        let post=document.getElementById('post');
-        post.remove();
-    }
+{{--        let post=document.getElementById('post');--}}
+{{--        post.remove();--}}
+{{--    }--}}
 
-</script>
+{{--</script>--}}
 </html>
